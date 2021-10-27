@@ -10,6 +10,18 @@ export const GlobalStyles = createGlobalStyle`
         --green-500:#44bd32;
     }    
 
+    html{
+        //15px
+        @media(max-width:1120px){
+            font-size: 93.5%;
+        }
+
+        //14px
+        @media(max-width:720px){
+            font-size: 83.75%;
+        }
+    }
+
     *{
         margin: 0;
         padding: 0;
