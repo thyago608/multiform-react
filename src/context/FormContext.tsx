@@ -1,7 +1,7 @@
 import { createContext, useReducer, ReactNode } from "react";
 
-//Tipo da informação do Reducer
-type StateReducer = {
+//Tipo do Estado do Reducer
+type State = {
   currentStep: number;
   email: string;
   github: string;
@@ -9,8 +9,14 @@ type StateReducer = {
   level: 0 | 1;
 };
 
+//Ação que será utilizada no Reducer
+type Action = {
+  type: FormActions;
+  payload: any;
+};
+
 //Estado inicial do Reducer
-const initialDataReducer: StateReducer = {
+const initialDataReducer: State = {
   currentStep: 0,
   email: "",
   github: "",
@@ -20,7 +26,7 @@ const initialDataReducer: StateReducer = {
 
 //Tipagem do Contexto
 type FormContextProps = {
-  state: StateReducer;
+  state: State;
   dispatch: (action: Action) => void;
 };
 
@@ -34,7 +40,7 @@ export const FormContext = createContext<FormContextProps>(
 );
 
 //Tipos de ações
-enum FormActions {
+export enum FormActions {
   setCurrentStep,
   setName,
   setLevel,
@@ -42,13 +48,8 @@ enum FormActions {
   setGithub,
 }
 
-type Action = {
-  type: FormActions;
-  payload: any;
-};
-
-const FormReducer = (state: StateReducer, action: Action) => {
-  switch (action.type) {
+const FormReducer = (state: State, action: Action) => {
+  switch (action.type){ 
     case FormActions.setCurrentStep:
       return { ...state, currentStep: action.payload };
 

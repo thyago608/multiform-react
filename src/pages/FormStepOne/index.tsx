@@ -1,9 +1,27 @@
-import { Container } from "./styles";
+import { ReactNode } from "react";
+import {
+  Container,
+  Content,
+  Header,
+  Main,
+  Aside,
+  ContainerPages,
+} from "./styles";
 
-export function FormStepOne() {
+type Props = {
+  children: ReactNode;
+};
+
+export function FormStepOne({ children }: Props) {
   return (
     <Container>
-      <h1>Etapa 1</h1>
+      <Content>
+        <Header />
+        <Main>
+          <Aside></Aside>
+          <ContainerPages>{children}</ContainerPages>
+        </Main>
+      </Content>
     </Container>
   );
 }
