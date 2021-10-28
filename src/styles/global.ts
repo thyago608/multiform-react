@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 
     :root{
+        --gray-100:#dfe6e9;
         --gray-600: #3D3C42;
         --gray-700:#222f3e;
         --violet-200:#6c5ce7;
@@ -30,6 +31,7 @@ export const GlobalStyles = createGlobalStyle`
 
     body{
         background: var(--gray-600);
+        color: var(--gray-100);
     }
 
     body, input, select, textarea, button{
