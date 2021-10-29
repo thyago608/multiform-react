@@ -5,7 +5,7 @@ export const Container = styled.div`
     margin-bottom: 1rem;
   }
 
-  > button {
+  button {
     border: 0;
     border-radius: 5px;
     height: 2rem;

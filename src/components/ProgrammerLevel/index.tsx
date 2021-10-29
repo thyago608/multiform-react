@@ -1,15 +1,22 @@
+import { ButtonHTMLAttributes } from 'react';
 import { Container, Icon } from "./styles";
 
-type Props = {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   level: string;
   time: string;
   icon: string;
   active: boolean;
 };
 
-export function ProgrammerLevel({ active, level, time, icon }: Props) {
+export function ProgrammerLevel({
+  active,
+  level,
+  time,
+  icon,
+  ...rest
+}: Props) {
   return (
-    <Container active={active}>
+    <Container active={active} {...rest}>
       <Icon>{icon}</Icon>
 
       <section>

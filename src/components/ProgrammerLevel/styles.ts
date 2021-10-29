@@ -11,7 +11,6 @@ export const Container = styled.button<Props>`
   background: ${({ active }) => (active ? "#27ae60" : "#3D3C42")};
   color: #ffffff;
   display: flex;
-  transition: filter 0.2s ease;
 
   > section {
     margin-left: 1.5rem;
@@ -24,10 +23,6 @@ export const Container = styled.button<Props>`
     p {
       font-size: 0.9rem;
     }
-  }
-
-  &:hover {
-    filter: brightness(0.7);
   }
 `;
 
