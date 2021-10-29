@@ -38,7 +38,7 @@ export const InputBlock = styled.div`
     font-size: 1rem;
     height: 2.5rem;
     padding: 1rem;
-
+    font-weight: 100;
     border: 2px solid transparent;
     border-radius: 1rem;
     outline: transparent;

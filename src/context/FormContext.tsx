@@ -31,7 +31,7 @@ type FormContextProps = {
 };
 
 //Tipagem do Provider
-type FormContextProvider = {
+type FormContextProviderProps = {
   children: ReactNode;
 };
 
@@ -70,7 +70,7 @@ const FormReducer = (state: State, action: Action) => {
   }
 };
 
-export function FormContextProvider({ children }: FormContextProvider) {
+export function FormContextProvider({ children }: FormContextProviderProps) {
   const [state, dispatch] = useReducer(FormReducer, initialDataReducer);
   return (
     <FormContext.Provider value={{ state, dispatch }}>
