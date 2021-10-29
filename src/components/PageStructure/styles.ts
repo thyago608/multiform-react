@@ -25,7 +25,14 @@ export const Main = styled.main`
 
 export const SideBar = styled.aside`
   width: 250px;
-  border-right: 1px solid ${transparentize(0.1, "#483D8B")};
+  border-right: 1px solid ${transparentize(0.5, "#3D3C42")};
+
+  @media (max-width: 800px) {
+    width: 90%;
+    margin: 0 auto;
+    border-left: 1px solid ${transparentize(0.5, "#3D3C42")};
+    border-bottom: 1px solid ${transparentize(0.5, "#3D3C42")};
+  }
 `;
 
 export const ContainerPages = styled.section`

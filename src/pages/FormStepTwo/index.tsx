@@ -31,16 +31,15 @@ export function FormStepTwo() {
   }
 
   useEffect(() => {
-    if (state.name === "") {
-      history.push("/");
-    }
-
     dispatch({
       type: FormActions.setCurrentStep,
       payload: 2,
     });
   }, [dispatch]);
 
+  if (state.name === "") {
+    history.push("/");
+  }
   return (
     <PageStructure>
       <ToastContainer />

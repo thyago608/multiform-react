@@ -2,10 +2,11 @@ import { ChangeEvent, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import { PageStructure } from "../../components/PageStructure";
+import { Input } from "../../components/Input";
 import { FormActions } from "../../context/FormContext";
 import { useForm } from "../../hooks/useForm";
 
-import { Container, InputBlock } from "./styles";
+import { Container } from "./styles";
 import "react-toastify/dist/ReactToastify.css";
 
 export function FormStepOne() {
@@ -44,10 +45,14 @@ export function FormStepOne() {
         </header>
         <p>Preencha o campo abaixo com seu nome completo:</p>
 
-        <InputBlock>
-          <label htmlFor="name">Seu nome completo</label>
-          <input id="name" type="text" autoFocus onChange={handleOnChange} />
-        </InputBlock>
+        <Input
+          name="name"
+          label="Seu nome completo"
+          type="text"
+          autoFocus
+          onChange={handleOnChange}
+          value={state.name}
+        />
 
         <button type="button" onClick={handleNextSlep}>
           Próximo
