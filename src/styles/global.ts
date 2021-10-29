@@ -5,10 +5,14 @@ export const GlobalStyles = createGlobalStyle`
     :root{
         --gray-100:#dfe6e9;
         --gray-600: #3D3C42;
-        --gray-700:#222f3e;
+        --gray-700:#1C1C1C;
         --violet-200:#6c5ce7;
-        --violet-400:#5f27cd;
-        --green-500:#44bd32;
+        --violet-300:#7d5fff;
+        --violet-400:#483D8B;
+        --green-400:#25CD89;
+        --green-500:#2ecc71;
+        --green-600:#27ae60;
+     
     }    
 
     html{
@@ -30,7 +34,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body{
-        background: var(--gray-600);
+        background: var(--gray-700);
         color: var(--gray-100);
     }
 
