@@ -37,7 +37,7 @@ export function FormStepOne() {
 
   return (
     <PageStructure>
-      <ToastContainer />
+      <ToastContainer theme="colored" />
       <Container>
         <header>
           <span>Passo 1/3</span>

@@ -1,9 +1,11 @@
-import { ChangeEvent, useEffect } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { PageStructure } from "../../components/PageStructure";
+import { ToastContainer, toast } from "react-toastify";
 import { FormActions } from "../../context/FormContext";
 import { useHistory, Link } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { Input } from "../../components/Input";
+import "react-toastify/dist/ReactToastify.css";
 import { Container, ContainerInput } from "./styles";
 
 export function FormStepThree() {
@@ -24,22 +26,40 @@ export function FormStepThree() {
     });
   }
 
-  function handleNextSlep() {}
+  function handleNextSlep() {
+    if (state.email && state.github) {
+      const toastRef = toast.loading(
+        "Cadastrando as informações no sistema..",
+        {
+          isLoading: true,
+          type: "default",
+        }
+      );
+
+      setTimeout(() => {
+        toast.update(toastRef, {
+          isLoading: false,
+          type: "success",
+          render: "Informação cadastrada com sucesso",
+        });
+      }, 3000);
+    }
+  }
 
   useEffect(() => {
-   
     dispatch({
       type: FormActions.setCurrentStep,
       payload: 3,
     });
   }, [dispatch]);
 
-   if (state.name === "") {
-     history.push("/");
-   }
+  if (state.name === "") {
+    history.push("/");
+  }
 
   return (
     <PageStructure>
+      <ToastContainer theme="colored" />
       <Container>
         <header>
           <span>Passo 3/3</span>

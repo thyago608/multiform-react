@@ -42,7 +42,7 @@ export function FormStepTwo() {
   }
   return (
     <PageStructure>
-      <ToastContainer />
+      <ToastContainer theme="colored" />
       <Container>
         <header>
           <span>Passo 2/3</span>
